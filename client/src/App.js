@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar';
-
+import Home from './Pages/Home';
 class App extends Component {
   state = {
     response: '',
@@ -43,40 +42,42 @@ class App extends Component {
   render() {
     return (
       <Router>
-        
-      <div className="App">
+
+        <div className="App">
 
           <Navbar />
-          {/* <Route exact path={routes.HOME} component={Home} /> */}
 
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
+          <Route exact path="/Home" component={Home} />
+
+          {/* <header className="App-header">
+
+            <p>
+              Edit <code>src/App.js</code> and save to reload.
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
+            <a
+              className="App-link"
+              href="https://reactjs.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Learn React
           </a>
-        </header>
-        <p>{this.state.response}</p>
-        <form onSubmit={this.handleSubmit}>
-          <p>
-            <strong>Post to Server:</strong>
-          </p>
-          <input
-            type="text"
-            value={this.state.post}
-            onChange={e => this.setState({ post: e.target.value })}
-          />
-          <button type="submit">Submit</button>
-        </form>
-        <p>{this.state.responseToPost}</p>
-          </div>
+          </header>
+          <p>{this.state.response}</p>
+          <form onSubmit={this.handleSubmit}>
+            <p>
+              <strong>Post to Server:</strong>
+            </p>
+            <input
+              type="text"
+              value={this.state.post}
+              onChange={e => this.setState({ post: e.target.value })}
+            />
+            <button type="submit">Submit</button>
+          </form>
+        <p>{this.state.responseToPost}</p>*/}
+
+        </div>
       </Router>
     );
   }
