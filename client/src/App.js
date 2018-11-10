@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-
 import logo from './logo.svg';
-
 import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Navbar from './components/Navbar/Navbar';
 
 class App extends Component {
   state = {
@@ -42,7 +42,13 @@ class App extends Component {
 
   render() {
     return (
+      <Router>
+        
       <div className="App">
+
+          <Navbar />
+          {/* <Route exact path={routes.HOME} component={Home} /> */}
+
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
@@ -70,7 +76,8 @@ class App extends Component {
           <button type="submit">Submit</button>
         </form>
         <p>{this.state.responseToPost}</p>
-      </div>
+          </div>
+      </Router>
     );
   }
 }
